@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <header>
+    <h1>Строительная компания Ахметовых</h1>
+    <button id="scrollToCatalog">Посмотреть каталог услуг</button>
+  </header>
+
+  <main>
+    <section id="catalog">
+      <h2>Наши услуги</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <h3>Строительство домов</h3>
+          <p>
+            Мы строим дома под ключ с использованием современных технологий и
+            материалов.
+          </p>
+        </div>
+        <div class="service-card">
+          <h3>Ремонт квартир</h3>
+          <p>
+            Выполняем все виды ремонта квартир: косметический, капитальный,
+            дизайнерский.
+          </p>
+        </div>
+        <div class="service-card">
+          <h3>Дизайн интерьера</h3>
+          <p>
+            Создаем уникальные интерьеры, которые сочетают стиль, удобство и
+            функциональность.
+          </p>
+        </div>
+        <div class="service-card">
+          <h3>Коммерческое строительство</h3>
+          <p>
+            Строим и ремонтируем офисные здания, торговые центры, складские комплексы и другие объекты для бизнеса.
+          </p>
+        </div>
+        <div class="service-card">
+          <h3>Инженерные работы</h3>
+          <p>
+            Производим монтаж и обслуживание инженерных систем, таких как электрика, водоснабжение, отопление и вентиляция.
+          </p>
+        </div>
+        <div class="service-card">
+          <h3>Аренда строительной техники и оборудования</h3>
+          <p>
+            Предоставляем специализированную технику для строительных или ремонтных работ в аренду.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="orderForm">
+      <h2>Оставить заявку</h2>
+      <form>
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" name="phone" required />
+
+        <label for="message">Сообщение:</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <button type="submit">Отправить</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 ООО "СКА". </p>
+    <p>ОГРН 1231600004041.</p>
+    <p>ИНН 1655492651.</p>
+  </footer>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      background: #007BFF;
+      color: white;
+      padding: 20px;
+    }
+
+    header p {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    header button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #FFC107;
+      color: #333;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    header button:hover {
+      background: #E0A800;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    #catalog {
+      margin-top: 50px;
+      padding: 20px;
+      background: #e9ecef;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      padding: 20px;
+      background: #F8D7DA;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+      color: #721C24;
+    }
+
+    .service-card p {
+      color: #5A1F1F;
+    }
+
+    #orderForm {
+      margin-top: 50px;
+      padding: 20px;
+      background: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    form label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    form button {
+      padding: 10px 20px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background: #218838;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #343a40;
+      color: white;
+    }
+  </style>
+  <script>
+    document.getElementById('scrollToCatalog').addEventListener('click', () => {
+      document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const message = document.getElementById('message').value;
+
+      alert(`Спасибо за заявку, ${name}! Мы свяжемся с вами по номеру: ${phone}.`);
+
+      form.reset();
+    });
+
+  </script>
+</body>
+
+</html>
